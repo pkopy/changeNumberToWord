@@ -2,24 +2,25 @@
 
 ![xxx](https://img.shields.io/badge/npm-1.0.0.-blue.svg)
 
-![size](https://img.shields.io/badge/ninified%20size-3-KB-red.svg)
+![size](https://img.shields.io/badge/ninified%20size-3KB-red.svg)
 
 # Install
 
 ```
-$ npm install @pkopy/tiny
+$ npm install @pkopy/changenumber
 ```
 
 # Usage
 
 ```
-const tiny = require("@bamblehorse/tiny");
+const change = require("@pkopy/changenumber");
 
-tiny("So much space!");
-//=> "Somuchspace!"
+change(121);
+//=> "sto dwadzieścia jeden!"
 
-tiny(1337);
-//=> Uncaught TypeError: Tiny wants a string!
-//    at tiny (<anonymous>:2:41)
-//    at <anonymous>:1:1
+change('mama');
+//=> TypeError: This is not a number
+
+change(121.1)
+//=> TypeError: This is not a integer number
 ```

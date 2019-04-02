@@ -1,0 +1,17 @@
+{
+  "name": "@pkopy/changenumber",
+  "version": "1.0.0",
+  "description": "This package changes number into words in Polish",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Polish",
+    "change",
+    "npm",
+    "pkopy"
+  ],
+  "author": "pkopy",
+  "license": "MIT"
+}

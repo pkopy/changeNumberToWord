@@ -55,4 +55,4 @@ let change = (number) => {
   return str
 }
 
-console.log(change(3))
+module.exports = change

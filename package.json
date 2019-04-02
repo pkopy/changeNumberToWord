@@ -13,5 +13,6 @@
     "pkopy"
   ],
   "author": "pkopy",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "pkopy/changeNumberToWord"
 }

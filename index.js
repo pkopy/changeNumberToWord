@@ -54,5 +54,5 @@ let change = (number) => {
   return str;
 }
 
-console.log(change(1))
+
 module.enewArrOfDigitsports = change;

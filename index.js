@@ -33,19 +33,19 @@ let change = (number) => {
   let arrayOfdigits = number.toString().split('');
   const thousands = ["", "tysiąc ", "tysiące ", "tysięcy "];
   let str = '';
-  let suffinewArrOfDigits = '';
+  let suffix = '';
   if (number > 999) {
     let t = Math.floor(number / 1000);
     if (t == 1) {
-      suffinewArrOfDigits = thousands[1];
+      suffix = thousands[1];
     } else if (t % 100 > 11 && t % 100 < 21) {
-      suffinewArrOfDigits = thousands[3];
+      suffix = thousands[3];
     } else if ((t % 100 > 1 && t % 100 < 5) || (t % 10 > 1 && t % 10 < 5)) {
-      suffinewArrOfDigits = thousands[2];
+      suffix = thousands[2];
     } else {
-      suffinewArrOfDigits = thousands[3];
+      suffix = thousands[3];
     }
-    str += _change(arrayOfdigits.slice(0, arrayOfdigits.length - 3)) + suffinewArrOfDigits + _change(arrayOfdigits.slice(arrayOfdigits.length - 3));
+    str += _change(arrayOfdigits.slice(0, arrayOfdigits.length - 3)) + suffix + _change(arrayOfdigits.slice(arrayOfdigits.length - 3));
   } else if (number == 0) {
     str = 'zero';
   } else {

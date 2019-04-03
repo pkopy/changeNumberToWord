@@ -1,8 +1,8 @@
 # @pkopy/changeNumber
 
-![xxx](https://img.shields.io/badge/npm-2.0.3.-blue.svg)
+![xxx](https://img.shields.io/badge/npm-2.0.3.-blue.svg) ![size](https://img.shields.io/badge/ninified%20size-3KB-red.svg)
 
-![size](https://img.shields.io/badge/ninified%20size-3KB-red.svg)
+This package changes number into words in Polish
 
 # Install
 

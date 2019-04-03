@@ -1,6 +1,6 @@
 # @pkopy/changeNumber
 
-![xxx](https://img.shields.io/badge/npm-1.0.0.-blue.svg)
+![xxx](https://img.shields.io/badge/npm-2.0.3.-blue.svg)
 
 ![size](https://img.shields.io/badge/ninified%20size-3KB-red.svg)
 

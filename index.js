@@ -54,5 +54,4 @@ let change = (number) => {
   return str;
 }
 
-
-module.enewArrOfDigitsports = change;
+module.exports = change;

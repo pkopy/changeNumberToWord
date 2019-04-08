@@ -2,7 +2,7 @@
 
 ![xxx](https://img.shields.io/badge/npm-2.0.4.-blue.svg) ![size](https://img.shields.io/badge/ninified%20size-3KB-red.svg)
 
-This package changes number into words in Polish
+This package changes number into words in Polish. Range from 0 to 999 999 999
 
 # Install
 

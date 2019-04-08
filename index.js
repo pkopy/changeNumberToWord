@@ -26,28 +26,51 @@ let _change = (arrayOfdigits) => {
   return str;
 }
 
+
 let change = (number) => {
   if (isNaN(number)) throw new TypeError('This is not a number');
   if (!Number.isInteger(number)) throw new TypeError('This is not a integer number');
-  if (number > 999999 || number < 0) throw new Error('This version works only in range 0 - 999999')
+  if (number > 999999999 || number < 0) throw new Error('This version works only in range 0 - 9999999')
   let arrayOfdigits = number.toString().split('');
   const thousands = ["", "tysiąc ", "tysiące ", "tysięcy "];
+  const milions = ["", "milion ", "miliony ", "milionów "];
   let str = '';
-  let suffix = '';
+  let thousandSuffix = '';
+  let milionSuffix = '';
+  if (number == 0) {
+    str = 'zero';
+  };
+
+  if (number > 999999) {
+    let m = Math.floor(number / 1000000);
+    if (m == 1) {
+      milionSuffix = milions[1];
+    } else if (m % 100 > 11 && m % 100 < 21) {
+      milionSuffix = milions[3];
+    } else if ((m % 100 > 1 && m % 100 < 5) || (m % 10 > 1 && m % 10 < 5)) {
+      milionSuffix = milions[2];
+    } else {
+      milionSuffix = milions[3];
+    }
+
+    number = number - m * 1000000;
+    str += _change(arrayOfdigits.slice(0, arrayOfdigits.length - 6)) + milionSuffix;
+  };
+
+  arrayOfdigits = number.toString().split('');
+
   if (number > 999) {
     let t = Math.floor(number / 1000);
     if (t == 1) {
-      suffix = thousands[1];
+      thousandSuffix = thousands[1];
     } else if (t % 100 > 11 && t % 100 < 21) {
-      suffix = thousands[3];
+      thousandSuffix = thousands[3];
     } else if ((t % 100 > 1 && t % 100 < 5) || (t % 10 > 1 && t % 10 < 5)) {
-      suffix = thousands[2];
+      thousandSuffix = thousands[2];
     } else {
-      suffix = thousands[3];
+      thousandSuffix = thousands[3];
     }
-    str += _change(arrayOfdigits.slice(0, arrayOfdigits.length - 3)) + suffix + _change(arrayOfdigits.slice(arrayOfdigits.length - 3));
-  } else if (number == 0) {
-    str = 'zero';
+    str += _change(arrayOfdigits.slice(0, arrayOfdigits.length - 3)) + thousandSuffix + _change(arrayOfdigits.slice(arrayOfdigits.length - 3));
   } else {
     str += _change(arrayOfdigits);
   }

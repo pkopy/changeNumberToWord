@@ -1,6 +1,6 @@
 {
   "name": "@pkopy/changenumber",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "description": "This package changes number into words in Polish",
   "main": "index.js",
   "scripts": {

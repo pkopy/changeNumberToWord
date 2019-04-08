@@ -6,21 +6,21 @@ let _change = (arrayOfdigits) => {
   const hundreds = ["", "sto ", "dwieście ", "trzysta ", "czterysta ", "pięćset ", "sześćset ", "siedemset ", "osiemset ", "dziewięćset "];
   const lastDigits = arrayOfdigits[arrayOfdigits.length - 2] + arrayOfdigits[arrayOfdigits.length - 1];
   let words = [dozens, hundreds];
-  let x = [];
+  let newArrOfDigits = [];
 
   if (lastDigits > 10 && lastDigits < 20) {
-    x = arrayOfdigits.slice(0, arrayOfdigits.length - 2);
-    x.push(0, arrayOfdigits[arrayOfdigits.length - 1]);
+    newArrOfDigits = arrayOfdigits.slice(0, arrayOfdigits.length - 2);
+    newArrOfDigits.push(0, arrayOfdigits[arrayOfdigits.length - 1]);
     words.unshift(teen);
   } else {
-    x = arrayOfdigits;
+    newArrOfDigits = arrayOfdigits;
     words.unshift(unity);
   }
  
   let str = '';
 
-  for (let i = 0; i < x.length; i++) {
-    str += words[x.length - 1 - i][x[i]];
+  for (let i = 0; i < newArrOfDigits.length; i++) {
+    str += words[newArrOfDigits.length - 1 - i][newArrOfDigits[i]];
   }
 
   return str;
@@ -29,6 +29,7 @@ let _change = (arrayOfdigits) => {
 let change = (number) => {
   if (isNaN(number)) throw new TypeError('This is not a number');
   if (!Number.isInteger(number)) throw new TypeError('This is not a integer number');
+  if (number > 999999 || number < 0) throw new Error('This version works only in range 0 - 999999')
   let arrayOfdigits = number.toString().split('');
   const thousands = ["", "tysiąc ", "tysiące ", "tysięcy "];
   let str = '';

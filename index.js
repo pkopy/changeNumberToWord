@@ -30,7 +30,7 @@ let _change = (arrayOfdigits) => {
 let change = (number) => {
   if (isNaN(number)) throw new TypeError('This is not a number');
   if (!Number.isInteger(number)) throw new TypeError('This is not a integer number');
-  if (number > 999999999 || number < 0) throw new Error('This version works only in range 0 - 9999999')
+  if (number > 999999999 || number < 0) throw new Error('This version works only in range 0 - 999 999 999')
   let arrayOfdigits = number.toString().split('');
   const thousands = ["", "tysiąc ", "tysiące ", "tysięcy "];
   const milions = ["", "milion ", "miliony ", "milionów "];
@@ -77,4 +77,5 @@ let change = (number) => {
   return str;
 }
 
+console.log(change(1000000000))
 module.exports = change;
